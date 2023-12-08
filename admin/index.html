@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Hanmart</title>
+    <link rel="icon" href="../assets/img/header/logo - Copy.png">
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="./css/main_admin.css">
+    <link rel="stylesheet" href="../assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../assets/icon/fontawesome-free-6.4.2-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="main-admin">
+        <header class="header-admin">
+            <div class="container-header">
+                <div class="header-logo"><a href="../index.html"><img src="../assets/img/header/logo.png" alt="logo"
+                            class="header-logo-img"></a></div>
+                <div class="header-admin-profile">
+                    <a href="#" class="admin-profile-link"><i class="fa-solid fa-user"></i>Hi Admin</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-admin">
+            <div class="content-admin-dashboard">
+                <ul class="dashboard-list">
+                    <li class="dashboard-item"><a href="#" class="dashboard-link">Quản lý Sản phẩm</a></li>
+                    <li class="dashboard-item"><a href="#" class="dashboard-link">Quản lý Danh mục</a></li>
+                    <li class="dashboard-item"><a href="#" class="dashboard-link">Quản lý Đơn hàng</a></li>
+                    <li class="dashboard-item"><a href="#" class="dashboard-link">Quản lý Tài khoản</a></li>
+                </ul>
+            </div>
+            <div class="container-content-admin">
+                <h1 class="content-admin-title">Quản lý sản phẩm</h1>
+                <div style="margin: 4rem 0 0 2.4rem;"><a class="btn btn_them js-them" >Thêm mới</a></div>
+                <div class="content-admin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên</th>
+                                <th>Ảnh</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Danh mục</th>
+                                <th>Sửa</th>
+                            </tr>
+                        </thead>
+                        <tbody class="product-item">
+                            <tr>
+                                <td>1</td>
+                                <td>ABC</td>
+                                <td><img src="../assets/img/products/chanh.jpg" alt=""></td>
+                                <td>122000</td>
+                                <td>122</td>
+                                <td>Rau củ quả</td>
+                                <td><a class="btn btn_sua js-sua">Sửa</a>
+                                    <a class="btn btn_xoa">Xóa</a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>ABC</td>
+                                <td><img src="../assets/img/products/coca.jpg" alt=""></td>
+                                <td>122000</td>
+                                <td>122</td>
+                                <td>Rau củ quả</td>
+                                <td><a class="btn btn_sua js-sua">Sửa</a>
+                                    <a class="btn btn_xoa">Xóa</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- Modal them sp -->
+        <div class="modal-content js-add-modal">
+            <div class="modal-form js-add-form">
+                <div class="modal-header btn_them">
+                    <h5 class="modal-title">Thêm Sản Phẩm</h5>
+                    <button type="button" class="close js-close btn_them" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-product-form" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group">
+                                <label style="font-size: 18px">Tên sản phẩm</label>
+                                <input type="text" name="product_name" class="form-control"
+                                    placeholder="Nhập tên sản phẩm">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Danh mục</label>
+                                <select class="form-control category_list" name="category_id">
+                                    <option value="">Chọn danh mục</option>
+                                    <option value="2">Rau củ quả</option>
+                                    <option value="3">Thịt</option>
+                                    <option value="4">Hải sản</option>
+                                    <option value="5">Sữa</option>
+                                    <option value="6">Home Appliances</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 18px">Mô tả sản phẩm</label>
+                                <textarea class="form-control" name="product_desc" placeholder="Nhập mô tả"
+                                    style="height: 60px; padding-top: 1rem;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 18px">Số lượng</label>
+                                <input type="number" name="product_qty" class="form-control"
+                                    placeholder="Nhập số lượng">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Đơn giá</label>
+                                <input type="number" name="product_price" class="form-control" placeholder="Nhập giá">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Từ khóa sản phẩm </label>
+                                <input type="text" name="product_keywords" class="form-control"
+                                    placeholder="Nhập từ khóa">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Ảnh <small>(format: jpg, jpeg, png)</small></label>
+                                <input type="file" name="product_image" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="add_product" value="1">
+                            <div class="">
+                                <button type="button" class="btn btn_them add-product">Thêm mới</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal sua sp -->
+        <div class="modal-content js-edit-modal">
+            <div class="modal-form js-edit-form">
+                <div class="modal-header btn_sua">
+                    <h5 class="modal-title">Sửa Sản Phẩm</h5>
+                    <button type="button" class="close js-edit-close btn_sua" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-product-form" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group">
+                                <label style="font-size: 18px">Tên sản phẩm</label>
+                                <input type="text" name="product_name" class="form-control"
+                                    placeholder="Nhập tên sản phẩm">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Danh mục</label>
+                                <select class="form-control category_list" name="category_id">
+                                    <option value="">Chọn danh mục</option>
+                                    <option value="2">Rau củ quả</option>
+                                    <option value="3">Thịt</option>
+                                    <option value="4">Hải sản</option>
+                                    <option value="5">Sữa</option>
+                                    <option value="6">Home Appliances</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 18px">Mô tả sản phẩm</label>
+                                <textarea class="form-control" name="product_desc" placeholder="Nhập mô tả"
+                                    style="height: 60px; padding-top: 1rem;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 18px">Số lượng</label>
+                                <input type="number" name="product_qty" class="form-control"
+                                    placeholder="Nhập số lượng">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Đơn giá</label>
+                                <input type="number" name="product_price" class="form-control" placeholder="Nhập giá">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Từ khóa sản phẩm </label>
+                                <input type="text" name="product_keywords" class="form-control"
+                                    placeholder="Nhập từ khóa">
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-size: 18px">Ảnh <small>(format: jpg, jpeg, png)</small></label>
+                                <input type="file" name="product_image" class="form-control">
+                            </div>
+
+                            <input type="hidden" name="add_product" value="1">
+                            <div class="">
+                                <button type="button" class="btn btn_sua add-product">Cập nhật</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/main_admin.js"></script>
+</body>
+
+</html>
